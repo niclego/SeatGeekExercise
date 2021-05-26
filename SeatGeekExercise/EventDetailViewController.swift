@@ -33,6 +33,10 @@ class EventDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        eventImageView.layer.cornerRadius = 10
+        eventImageView.clipsToBounds = true
+        
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: heartType), style: .plain, target: self, action: #selector(addTapped))
 
