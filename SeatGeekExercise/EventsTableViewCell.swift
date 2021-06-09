@@ -20,10 +20,8 @@ class EventsTableViewCell: UITableViewCell {
         self.eventLocationLabel.text = "\(event.venue.city), \(event.venue.state)"
         self.eventDateLabel.text = event.formatedDate
         self.eventImageView.sd_setImage(with: URL(string: event.performers[0].image))
-        
-        eventImageView.layer.cornerRadius = 10
-        eventImageView.clipsToBounds = true
-        
+        self.eventImageView.layer.cornerRadius = 10
+        self.eventImageView.clipsToBounds = true
         self.heartImageView.isHidden = !isSaved
     }
 }

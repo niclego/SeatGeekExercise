@@ -20,15 +20,16 @@ class EventsViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search events"
         navigationItem.searchController = searchController
-        definesPresentationContext = true
         
-        tableView.delegate = self
         tableView.dataSource = self
+        
         eventsManager.delegate = self
         eventsManager.fetchEvents(queryString: "")
+        
         super.viewDidLoad()
     }
     
+    // We are using this, tableView.delegate would use tableView(_:didSelectRowAt:)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
             segue.identifier == "ShowEventDetailSegue",
@@ -37,7 +38,7 @@ class EventsViewController: UIViewController {
         else {
             return
         }
-        
+
         let event = events.events[indexPath.row]
         eventDetailViewController.savedEvent = isSavedEvent(eventId: event.id)
         eventDetailViewController.event = event
@@ -45,7 +46,7 @@ class EventsViewController: UIViewController {
 
         let backItem = UIBarButtonItem()
         backItem.title = ""
-        navigationItem.backBarButtonItem = backItem 
+        navigationItem.backBarButtonItem = backItem
     }
     
     func isSavedEvent(eventId: Int) -> Bool {
@@ -69,7 +70,7 @@ class EventsViewController: UIViewController {
 
 //MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension EventsViewController: UITableViewDataSource, UITableViewDelegate {
+extension EventsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.events.count
     }
