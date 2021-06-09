@@ -1,5 +1,5 @@
 # SeatGeekExercise
-SeatGeekExercise project for Fetch Rewards
+SeatGeekExercise project
 
 Hello,
 
