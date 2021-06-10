@@ -17,7 +17,9 @@
 		828CA86C265D59C000DD691F /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828CA86B265D59C000DD691F /* EventsViewController.swift */; };
 		828CA86E265D5C3D00DD691F /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828CA86D265D5C3D00DD691F /* EventsTableViewCell.swift */; };
 		828CA870265D5D1000DD691F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828CA86F265D5D1000DD691F /* Events.swift */; };
-		828CA873265D5F8D00DD691F /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828CA872265D5F8D00DD691F /* EventsManager.swift */; };
+		82DA61D926727B2A00A5AFB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA61D826727B2A00A5AFB0 /* NetworkManager.swift */; };
+		82DA61DB26727B7900A5AFB0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA61DA26727B7900A5AFB0 /* Endpoint.swift */; };
+		82DA61DD26727BA600A5AFB0 /* SeatGeekEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA61DC26727BA600A5AFB0 /* SeatGeekEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +34,9 @@
 		828CA86B265D59C000DD691F /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		828CA86D265D5C3D00DD691F /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		828CA86F265D5D1000DD691F /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		828CA872265D5F8D00DD691F /* EventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsManager.swift; sourceTree = "<group>"; };
+		82DA61D826727B2A00A5AFB0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		82DA61DA26727B7900A5AFB0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		82DA61DC26727BA600A5AFB0 /* SeatGeekEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +75,7 @@
 				828CA871265D5F7900DD691F /* Model */,
 				82F7C40B26719C5000EFDFC2 /* View */,
 				82F7C40526719B7C00EFDFC2 /* Controller */,
-				82F7C40626719B8400EFDFC2 /* Networking */,
+				82F7C40826719B9600EFDFC2 /* Manager */,
 				8259826C265C8CB30051CBB5 /* Assets.xcassets */,
 				82598271265C8CB30051CBB5 /* Info.plist */,
 			);
@@ -82,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				828CA86F265D5D1000DD691F /* Events.swift */,
-				828CA872265D5F8D00DD691F /* EventsManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,20 +117,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		82F7C40626719B8400EFDFC2 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				82F7C40A26719BA100EFDFC2 /* Encoding */,
-				82F7C40926719B9C00EFDFC2 /* Service */,
-				82F7C40826719B9600EFDFC2 /* Manager */,
-				82F7C40726719B9000EFDFC2 /* EndPoint */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		82F7C40726719B9000EFDFC2 /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
+				82DA61DC26727BA600A5AFB0 /* SeatGeekEndpoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -135,6 +128,9 @@
 		82F7C40826719B9600EFDFC2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				82DA61D826727B2A00A5AFB0 /* NetworkManager.swift */,
+				82F7C40926719B9C00EFDFC2 /* Service */,
+				82F7C40726719B9000EFDFC2 /* EndPoint */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -142,15 +138,9 @@
 		82F7C40926719B9C00EFDFC2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				82DA61DA26727B7900A5AFB0 /* Endpoint.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		82F7C40A26719BA100EFDFC2 /* Encoding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Encoding;
 			sourceTree = "<group>";
 		};
 		82F7C40B26719C5000EFDFC2 /* View */ = {
@@ -237,10 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				828CA873265D5F8D00DD691F /* EventsManager.swift in Sources */,
+				82DA61DB26727B7900A5AFB0 /* Endpoint.swift in Sources */,
 				828CA86E265D5C3D00DD691F /* EventsTableViewCell.swift in Sources */,
+				82DA61DD26727BA600A5AFB0 /* SeatGeekEndpoint.swift in Sources */,
 				82598264265C8CB20051CBB5 /* AppDelegate.swift in Sources */,
 				82598266265C8CB20051CBB5 /* SceneDelegate.swift in Sources */,
+				82DA61D926727B2A00A5AFB0 /* NetworkManager.swift in Sources */,
 				828CA86C265D59C000DD691F /* EventsViewController.swift in Sources */,
 				825CA8C0265D8F3F00E50443 /* EventDetailViewController.swift in Sources */,
 				828CA870265D5D1000DD691F /* Events.swift in Sources */,

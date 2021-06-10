@@ -9,7 +9,6 @@ import UIKit
 
 class EventsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var eventsManager = EventsManager()
     var events = Events(events: [])
 
     override func viewDidLoad() {
@@ -23,8 +22,7 @@ class EventsViewController: UIViewController {
         
         tableView.dataSource = self
         
-        eventsManager.delegate = self
-        eventsManager.fetchEvents(queryString: "")
+        fetchEvents(searchText: "")
         
         super.viewDidLoad()
     }
@@ -47,6 +45,18 @@ class EventsViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
+    }
+    
+    func fetchEvents(searchText: String) {
+        NetworkManager.request(enpoint: SeatGeekEndpoint.getSearchResults(searchText: searchText, page: 1)) { (result: Result<Events, Error>) in
+            switch result {
+            case .success(let response):
+                self.events = response
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func isSavedEvent(eventId: Int) -> Bool {
@@ -84,27 +94,12 @@ extension EventsViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - EventsManagerDelegate
-
-extension EventsViewController: EventsManagerDelegate {
-    func didUpdateEvents(_ eventsManager: EventsManager, events: Events) {
-        DispatchQueue.main.async {
-            self.events = events
-            self.tableView.reloadData()
-        }
-    }
-    
-    func didFailWithError(error: Error) {
-        print(error)
-    }
-}
-
 //MARK: - UISearchResultsUpdating
 
 extension EventsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        let searchString = searchBar.text ?? ""
-        eventsManager.fetchEvents(queryString: searchString)
+        let searchText = searchBar.text ?? ""
+        fetchEvents(searchText: searchText)
     }
 }
