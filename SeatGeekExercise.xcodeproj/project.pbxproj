@@ -66,15 +66,13 @@
 		82598262265C8CB20051CBB5 /* SeatGeekExercise */ = {
 			isa = PBXGroup;
 			children = (
+				82F7C40426719B6D00EFDFC2 /* Application */,
+				82DA615926723F6600A5AFB0 /* Storyboards */,
 				828CA871265D5F7900DD691F /* Model */,
-				82598263265C8CB20051CBB5 /* AppDelegate.swift */,
-				82598265265C8CB20051CBB5 /* SceneDelegate.swift */,
-				828CA86B265D59C000DD691F /* EventsViewController.swift */,
-				828CA86D265D5C3D00DD691F /* EventsTableViewCell.swift */,
-				825CA8BF265D8F3F00E50443 /* EventDetailViewController.swift */,
-				82598269265C8CB20051CBB5 /* Main.storyboard */,
+				82F7C40B26719C5000EFDFC2 /* View */,
+				82F7C40526719B7C00EFDFC2 /* Controller */,
+				82F7C40626719B8400EFDFC2 /* Networking */,
 				8259826C265C8CB30051CBB5 /* Assets.xcassets */,
-				8259826E265C8CB30051CBB5 /* LaunchScreen.storyboard */,
 				82598271265C8CB30051CBB5 /* Info.plist */,
 			);
 			path = SeatGeekExercise;
@@ -87,6 +85,80 @@
 				828CA872265D5F8D00DD691F /* EventsManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		82DA615926723F6600A5AFB0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8259826E265C8CB30051CBB5 /* LaunchScreen.storyboard */,
+				82598269265C8CB20051CBB5 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		82F7C40426719B6D00EFDFC2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				82598265265C8CB20051CBB5 /* SceneDelegate.swift */,
+				82598263265C8CB20051CBB5 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		82F7C40526719B7C00EFDFC2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				828CA86B265D59C000DD691F /* EventsViewController.swift */,
+				825CA8BF265D8F3F00E50443 /* EventDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		82F7C40626719B8400EFDFC2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				82F7C40A26719BA100EFDFC2 /* Encoding */,
+				82F7C40926719B9C00EFDFC2 /* Service */,
+				82F7C40826719B9600EFDFC2 /* Manager */,
+				82F7C40726719B9000EFDFC2 /* EndPoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		82F7C40726719B9000EFDFC2 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		82F7C40826719B9600EFDFC2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		82F7C40926719B9C00EFDFC2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82F7C40A26719BA100EFDFC2 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		82F7C40B26719C5000EFDFC2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828CA86D265D5C3D00DD691F /* EventsTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

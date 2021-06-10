@@ -43,7 +43,6 @@ struct EventsManager {
     
     func parseJSON(_ eventsData: Data) -> Events? {
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         do {
             let events = try decoder.decode(Events.self, from: eventsData)

@@ -21,10 +21,8 @@ struct Event: Codable {
     var formatedDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        let myDate = dateFormatter.date(from: datetimeUtc)!
-        
+        guard let myDate = dateFormatter.date(from: datetimeUtc) else { return "No available date at this time." }
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy h:mm a"
         dateFormatter.timeZone = NSTimeZone.local
         let somedateString = dateFormatter.string(from: myDate)

@@ -15,6 +15,9 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var heartImageView: UIImageView!
     
+    // I could do an event computed property here and
+    // manually set these in a didSet function.
+    
     func setEvent(event: Event, isSaved: Bool) {
         self.eventTitleLabel.text = event.shortTitle
         self.eventLocationLabel.text = "\(event.venue.city), \(event.venue.state)"
