@@ -117,12 +117,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		82F7C40726719B9000EFDFC2 /* EndPoint */ = {
+		82F7C40726719B9000EFDFC2 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
 				82DA61DC26727BA600A5AFB0 /* SeatGeekEndpoint.swift */,
 			);
-			path = EndPoint;
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 		82F7C40826719B9600EFDFC2 /* Manager */ = {
@@ -130,7 +130,7 @@
 			children = (
 				82DA61D826727B2A00A5AFB0 /* NetworkManager.swift */,
 				82F7C40926719B9C00EFDFC2 /* Service */,
-				82F7C40726719B9000EFDFC2 /* EndPoint */,
+				82F7C40726719B9000EFDFC2 /* Endpoint */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
